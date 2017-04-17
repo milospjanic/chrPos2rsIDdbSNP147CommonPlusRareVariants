@@ -3,7 +3,7 @@
 
 chrPos2rsIDdbSNP147CommonPlusRareVariants is a script to convert a list of genomics positions in a format: chrno_position_allele1_allele2 to SNP rsIDs. Script will append rsIDs as a column to an existing file. chrPos2rsIDdbSNP147CommonPlusRareVariants is useful for quick conversion to SNP rsIDs for various downstream analysis and lookups.
 
-chrPos2rsIDdbSNP147CommonPlusRareVariants uses dbSNP147 dataset from UCSC table browser that contains both common and rare variants (in total **158622213** variants , and thus can convert datasets with rare variants.
+chrPos2rsIDdbSNP147CommonPlusRareVariants uses dbSNP147 dataset from UCSC table browser that contains both common and rare variants (in total **158,622,213** variants , and thus can convert datasets with rare variants.
 
 **Usage**
 
@@ -28,7 +28,7 @@ MarkerName	Allele1	Allele2	Freq1	Effect	StdErr	P-value	Direction
 
 Next an akw code will parse your file to free up chr and position from the first column, append chr to newly formed first column, remove alleles, and perform comparison of your file and dbSNP data using 4 different hash tables in awk. Script will output a file of your input SNPs with rsID appended to it, separated by tab and save it as $1.rsID, $1 being first parameter provided to the script that should be the file name containing SNPs. 
 
-dbSNP download will produce a file dbSNP147allSNPs.gz, with 14,815,821 SNPs:
+dbSNP download will produce a file dbSNP147allSNPs.gz, with 158,622,213 SNPs:
 <pre>
 zcat dbSNP147allSNPs.gz | head
 #chrom  chromStart      chromEnd        name
