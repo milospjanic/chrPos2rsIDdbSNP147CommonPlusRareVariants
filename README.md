@@ -46,7 +46,7 @@ mpjanic@zoran:~/rsID2Bed$ wc -l snp147Common.bed
 14815821 snp147Common.bed
 </pre>
 
-**chrPos2rsID will check if dbSNP file exists and if it is parsed into categories, and if not it will download it from mySQL and parse the file into insertion (same base pair coordinates), SNPs plus simple deletions (single base pair coordinates), and large deletions (more than 1 base pair difference in the coordinates), that will be proccessed with a separate code and at the end merged into a single output.**
+**chrPos2rsIDdbSNP147CommonPlusRareVariants will check if dbSNP file exists and if it is parsed into categories, and if not it will download it from mySQL and parse the file into insertion (same base pair coordinates), SNPs plus simple deletions (single base pair coordinates), and large deletions (more than 1 base pair difference in the coordinates), that will be proccessed with a separate code and at the end merged into a single output.**
 
 <pre>
 -rw-rw-r-- 1 mpjanic mpjanic 494M Dec 14 18:48 snp147Common.bed
@@ -54,7 +54,7 @@ mpjanic@zoran:~/rsID2Bed$ wc -l snp147Common.bed
 -rw-rw-r-- 1 mpjanic mpjanic 455M Mar 29 12:41 snp147Common.bed.snp.plus.simple.deletions
 -rw-rw-r-- 1 mpjanic mpjanic  16M Mar 29 12:41 snp147Common.bed.large.deletions
 
-mpjanic@zoran:~/chrPos2rsID$ head snp147Common.bed.insertions
+mpjanic@zoran:~/chrPos2rsIDdbSNP147CommonPlusRareVariants$ head snp147Common.bed.insertions
 chr1	10177	10177	rs367896724
 chr1	10352	10352	rs555500075
 chr1	13417	13417	rs777038595
@@ -65,7 +65,7 @@ chr1	249275	249275	rs200079338
 chr1	255923	255923	rs199745078
 chr1	363244	363244	rs572571697
 chr1	604229	604229	rs556776674
-mpjanic@zoran:~/chrPos2rsID$ head snp147Common.bed.snp.plus.simple.deletions
+mpjanic@zoran:~/chrPos2rsIDdbSNP147CommonPlusRareVariants$ head snp147Common.bed.snp.plus.simple.deletions
 chr1	11007	11008	rs575272151
 chr1	11011	11012	rs544419019
 chr1	13109	13110	rs540538026
@@ -76,7 +76,7 @@ chr1	14463	14464	rs546169444
 chr1	14598	14599	rs531646671
 chr1	14603	14604	rs541940975
 chr1	14672	14673	rs4690
-mpjanic@zoran:~/chrPos2rsID$ head snp147Common.bed.large.deletions
+mpjanic@zoran:~/chrPos2rsIDdbSNP147CommonPlusRareVariants$ head snp147Common.bed.large.deletions
 chr1	17358	17361	rs749387668
 chr1	63735	63738	rs201888535
 chr1	66435	66437	rs560481224
@@ -91,14 +91,14 @@ chr1	701779	701783	rs201234755
 
 Script preserves the header of the original file and adds 'rsID' as a first field and prepends it to the output file.  
 
-Output file will be placed in ~/chrPos2rsID
+Output file will be placed in ~/chrPos2rsIDdbSNP147CommonPlusRareVariants
 
 **Running**
 
 To run the script type:
 <pre>
-chmod 775 chrPos2rsID.sh 
-./chrPos2rsID.sh path/to/file
+chmod 775 chrPos2rsIDdbSNP147CommonPlusRareVariants.sh 
+./chrPos2rsIDdbSNP147CommonPlusRareVariants.sh path/to/file
 </pre>
 
 **Prerequisites**
@@ -120,7 +120,7 @@ MarkerName	Allele1	Allele2	Freq1	Effect	StdErr	P-value	Direction
 6_34861103_C_G	c	g	0.8548	0.19	0.0484	8.77E-05	++	
 6_34861799_A_G	a	g	0.1452	-0.19	0.0484	8.78E-05	--	
 
-./chrPos2rsID.sh SNP.file
+./chrPos2rsIDdbSNP147CommonPlusRareVariants.sh SNP.file
 
 head SNP.file.rsID.final
 rsID	chr	position	Allele1	Allele2	Freq1	Effect	StdErr	P-value	Direction	
