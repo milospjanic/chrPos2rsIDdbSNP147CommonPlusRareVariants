@@ -30,17 +30,17 @@ Next an akw code will parse your file to free up chr and position from the first
 
 dbSNP download will produce a file dbSNP147allSNPs.gz, with 14,815,821 SNPs:
 <pre>
-head dbSNP147allSNPs
-chr1	10177	10177	rs367896724
-chr1	10352	10352	rs555500075
-chr1	11007	11008	rs575272151
-chr1	11011	11012	rs544419019
-chr1	13109	13110	rs540538026
-chr1	13115	13116	rs62635286
-chr1	13117	13118	rs62028691
-chr1	13272	13273	rs531730856
-chr1	13417	13417	rs777038595
-chr1	14463	14464	rs546169444
+zcat dbSNP147allSNPs.gz | head
+#chrom  chromStart      chromEnd        name
+chr1    10485758        10485762        rs544485030
+chr1    149946368       149946368       rs587706965
+chr1    5111803         5111824         rs537299298
+chr1    22806522        22806534        rs528803201
+chr1    22806526        22806534        rs542546102
+chr1    51118080        51118080        rs201004118
+chr1    52297721        52297729        rs550763018
+chr1    58982394        58982405        rs370257144
+chr1    93454336        93454336        rs71586794
 
 mpjanic@zoran:~/chrPos2rsIDdbSNP147CommonPlusRareVariants$ wc -l dbSNP147allSNPs 
 14815821 dbSNP147allSNPs
