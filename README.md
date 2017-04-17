@@ -7,7 +7,7 @@ chrPos2rsIDdbSNP147CommonPlusRareVariants uses dbSNP147 dataset from UCSC table 
 
 **Usage**
 
-This script will check if the working folder ~/chrPos2rsIDdbSNP147CommonPlusRareVariants is present and if not it will create ~/chrPos2rsIDdbSNP147CommonPlusRareVariants. Next, script will go into ~/chrPos2rsIDdbSNP147CommonPlusRareVariants and check if dbSNP bed file for human genome hg19 is present or not, version 147, and in case it is not present it will download it from a custom link.
+This script will check if the working folder ~/chrPos2rsIDdbSNP147CommonPlusRareVariants is present and if not it will create ~/chrPos2rsIDdbSNP147CommonPlusRareVariants. Next, script will go into ~/chrPos2rsIDdbSNP147CommonPlusRareVariants and check if dbSNP bed file (downloaded from UCSC Table browser, including both common and rare variants) for human genome hg19 is present or not, version 147, and in case it is not present it will download it from a custom link.
 
 **Note - Script chrPos2rsIDdbSNP147CommonPlusRareVariants.sh can be placed anywhere as well as the input file, however output will be in ~/chrPos2rsIDdbSNP147CommonPlusRareVariants**
 
@@ -28,9 +28,9 @@ MarkerName	Allele1	Allele2	Freq1	Effect	StdErr	P-value	Direction
 
 Next an akw code will parse your file to free up chr and position from the first column, append chr to newly formed first column, remove alleles, and perform comparison of your file and dbSNP data using 4 different hash tables in awk. Script will output a file of your input SNPs with rsID appended to it, separated by tab and save it as $1.rsID, $1 being first parameter provided to the script that should be the file name containing SNPs. 
 
-dbSNP download will produce a file snp147Common.bed, with 14,815,821 SNPs:
+dbSNP download will produce a file dbSNP147allSNPs.gz, with 14,815,821 SNPs:
 <pre>
-head snp147Common.bed
+head dbSNP147allSNPs
 chr1	10177	10177	rs367896724
 chr1	10352	10352	rs555500075
 chr1	11007	11008	rs575272151
@@ -42,8 +42,8 @@ chr1	13272	13273	rs531730856
 chr1	13417	13417	rs777038595
 chr1	14463	14464	rs546169444
 
-mpjanic@zoran:~/rsID2Bed$ wc -l snp147Common.bed 
-14815821 snp147Common.bed
+mpjanic@zoran:~/chrPos2rsIDdbSNP147CommonPlusRareVariants$ wc -l dbSNP147allSNPs 
+14815821 dbSNP147allSNPs
 </pre>
 
 **chrPos2rsIDdbSNP147CommonPlusRareVariants will check if dbSNP file exists and if it is parsed into categories, and if not it will download it from mySQL and parse the file into insertion (same base pair coordinates), SNPs plus simple deletions (single base pair coordinates), and large deletions (more than 1 base pair difference in the coordinates), that will be proccessed with a separate code and at the end merged into a single output.**
