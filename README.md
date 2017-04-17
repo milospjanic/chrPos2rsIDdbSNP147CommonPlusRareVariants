@@ -3,7 +3,7 @@
 
 chrPos2rsIDdbSNP147CommonPlusRareVariants is a script to convert a list of genomics positions in a format: chrno_position_allele1_allele2 to SNP rsIDs. Script will append rsIDs as a column to an existing file. chrPos2rsIDdbSNP147CommonPlusRareVariants is useful for quick conversion to SNP rsIDs for various downstream analysis and lookups.
 
-chrPos2rsIDdbSNP147CommonPlusRareVariants uses dbSNP147 dataset from UCSC table browser that contains both common and rare variants, and thus can convert datasets with rare variants.
+chrPos2rsIDdbSNP147CommonPlusRareVariants uses dbSNP147 dataset from UCSC table browser that contains both common and rare variants (in total **158622213** variants , and thus can convert datasets with rare variants.
 
 **Usage**
 
@@ -42,8 +42,8 @@ chr1    52297721        52297729        rs550763018
 chr1    58982394        58982405        rs370257144
 chr1    93454336        93454336        rs71586794
 
-mpjanic@zoran:~/chrPos2rsIDdbSNP147CommonPlusRareVariants$ wc -l dbSNP147allSNPs 
-14815821 dbSNP147allSNPs
+mpjanic@zoran:~/chrPos2rsIDdbSNP147CommonPlusRareVariants$ wc -l dbSNP147allSNPs
+158622213 dbSNP147allSNPs
 </pre>
 
 **chrPos2rsIDdbSNP147CommonPlusRareVariants will check if dbSNP file exists and if it is parsed into categories, and if not it will download it from mySQL and parse the file into insertion (same base pair coordinates), SNPs plus simple deletions (single base pair coordinates), and large deletions (more than 1 base pair difference in the coordinates), that will be proccessed with a separate code and at the end merged into a single output.**
