@@ -46,6 +46,12 @@ mpjanic@zoran:~/chrPos2rsIDdbSNP147CommonPlusRareVariants$ wc -l dbSNP147allSNPs
 158622213 dbSNP147allSNPs
 </pre>
 
+**Unzip the file before running the script**
+
+<pre>
+gunzip dbSNP147allSNPs.gz
+</pre>
+
 **chrPos2rsIDdbSNP147CommonPlusRareVariants will check if dbSNP file exists and if it is parsed into categories, and if not it will download it from mySQL and parse the file into insertion (same base pair coordinates), SNPs plus simple deletions (single base pair coordinates), and large deletions (more than 1 base pair difference in the coordinates), that will be proccessed with a separate code and at the end merged into a single output.**
 
 <pre>
