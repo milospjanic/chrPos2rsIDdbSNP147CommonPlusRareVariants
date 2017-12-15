@@ -7,7 +7,7 @@ chrPos2rsIDdbSNP147CommonPlusRareVariants uses dbSNP147 dataset from UCSC table 
 
 **Usage**
 
-This script will check if the working folder ~/chrPos2rsIDdbSNP147CommonPlusRareVariants is present and if not it will create ~/chrPos2rsIDdbSNP147CommonPlusRareVariants. Next, script will go into ~/chrPos2rsIDdbSNP147CommonPlusRareVariants and check if dbSNP bed file (downloaded from UCSC Table browser, including both common and rare variants) for human genome hg19 is present or not, version 147, and in case it is not present it will download it from a custom link.
+This script will check if the working folder ~/chrPos2rsIDdbSNP147CommonPlusRareVariants is present and if not it will create ~/chrPos2rsIDdbSNP147CommonPlusRareVariants. Next, script will go into ~/chrPos2rsIDdbSNP147CommonPlusRareVariants and check if dbSNP bed file (downloaded from UCSC Table browser, including both common and rare variants) for human genome hg38 is present or not, version 147, and in case it is not present it will download it from a custom link.
 
 **Note - Script chrPos2rsIDdbSNP147CommonPlusRareVariants.sh can be placed anywhere as well as the input file, however output will be in ~/chrPos2rsIDdbSNP147CommonPlusRareVariants**
 
